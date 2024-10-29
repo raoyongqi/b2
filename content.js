@@ -79,3 +79,20 @@ window.onload = () => {
         console.log('当前网址在允许的列表中，链接跳转不会被禁用。');
     }
 };
+// 禁用右键菜单
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault(); // 禁止右键菜单
+});
+
+(function() {
+    'use strict';
+
+    // 处理链接点击事件
+    document.addEventListener('click', function(event) {
+        const target = event.target.closest('a'); // 检测点击的是否是链接
+        if (target) {
+            event.preventDefault(); // 阻止默认行为
+            window.open(target.href, '_blank'); // 在新窗口打开链接
+        }
+    }, true); // 使用捕获阶段
+})();
