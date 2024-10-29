@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Fullscreen Popup Extension",
+    "version": "1.0",
+    "description": "Show a fullscreen popup on every webpage",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
